@@ -15,7 +15,6 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
-    'app_login' => [[], ['_controller' => 'App\\Controller\\AuthController::login'], [], [['text', '/login']], [], []],
+    'app_login' => [[], ['_controller' => 'App\\Controller\\AuthController::login'], [], [['text', '/']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\AuthController::logout'], [], [['text', '/logout']], [], []],
-    'app_homepage' => [[], ['_controller' => 'App\\Controller\\DefaultController::index'], [], [['text', '/']], [], []],
 ];
