@@ -61,6 +61,10 @@ return [[
 '%5B%5BC%5DSymfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%23addLink%5D%5B1%5D' => 2,
 '%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container%5D%5B1%5D' => 1,
 '%5B%5BC%5DSymfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CDefaultController%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CController%5CDefaultController%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CDefaultController%23index%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CController%5CDefaultController%23index%5D%5B1%5D' => 2,
 '%5BDoctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%5D%5B1%5D' => 1,
 '%5B%5BC%5DDoctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%5D%5B1%5D' => 2,
 '%5BDoctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23setContainer%5D%5B1%5D' => 1,
@@ -602,6 +606,6 @@ return [[
 
 0 => 'N;',
 1 => [],
-2 => 1612552053,
+2 => 1612554410,
 
 ]];

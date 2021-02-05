@@ -176,6 +176,6 @@ class __TwigTemplate_a45bcbb977e0c80b4472168981de77d9a6467c9d6face5023c666163df8
         {% block body %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "C:\\Users\\Austin\\Desktop\\G3Excercise\\G3Exercise\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\Austin\\Desktop\\G3Excercise\\templates\\base.html.twig");
     }
 }
