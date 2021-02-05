@@ -101,11 +101,6 @@ class __TwigTemplate_5074047ef38a14ec1d3ae696b9c2eeef0930ac2832891ed27f398aab7d6
 </div>
 
 ";
-        // line 18
-        echo twig_escape_filter($this->env, (isset($context["phpinfo"]) || array_key_exists("phpinfo", $context) ? $context["phpinfo"] : (function () { throw new RuntimeError('Variable "phpinfo" does not exist.', 18, $this->source); })()), "html", null, true);
-        echo "
-
-";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -126,7 +121,7 @@ class __TwigTemplate_5074047ef38a14ec1d3ae696b9c2eeef0930ac2832891ed27f398aab7d6
 
     public function getDebugInfo()
     {
-        return array (  105 => 18,  99 => 14,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  99 => 14,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -147,8 +142,6 @@ Homepage
 \t  </div>
 \t</div>
 </div>
-
-{{ phpinfo }}
 
 {% endblock %}", "index.html.twig", "C:\\Users\\Austin\\Desktop\\G3Excercise\\templates\\index.html.twig");
     }
