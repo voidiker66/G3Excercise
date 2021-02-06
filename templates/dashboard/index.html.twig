@@ -17,6 +17,34 @@ Homepage
 
 {% if app.user %}
 	<div class="w-full m-8">
+	<h1>Post News</h1>
+
+	{{ form_start(postForm) }}
+	    {{ form_row(postForm.title) }}
+	    {{ form_row(postForm.text) }}
+
+	    <button type="submit" class="btn">Post</button>
+	{{ form_end(postForm) }}
+	</div>
+
+	<div class="w-3/5 m-8">
+		<h1>Recent News Posts</h1>
+		<div class="table w-full">
+	    	<div class="table-header-group bg-gray-300">
+	    		<div class="table-cell text-gray-700 px-4 py-2 text-md font-bold">Date</div>
+	    		<div class="table-cell text-gray-700 px-4 py-2 text-md font-bold">Author</div>
+	    		<div class="table-cell text-gray-700 px-4 py-2 text-md font-bold">Title</div>
+	    		<div class="table-cell text-gray-700 px-4 py-2 text-md font-bold">Text</div>
+	    	</div>
+	    	{% for post in posts %}
+	  		<div class="table-row-group bg-gray-300 hover:bg-gray-200">
+		  		<div class="table-cell text-gray-700 px-4 py-2 text-sm">{{ post.date|date("d/m/Y") }}</div>
+			    <div class="table-cell text-gray-700 px-4 py-2 text-sm"></div>
+			    <div class="table-cell text-gray-700 px-4 py-2 text-sm">{{ post.title }}</div>
+			    <div class="table-cell text-gray-700 px-4 py-2 text-sm">{{ post.text }}</div>
+		  	</div>
+		  	{% endfor %}
+	  	</div>
 	</div>
 {% endif %}
 

@@ -365,6 +365,9 @@
       <tag name="doctrine.fixture.orm"/>
       <argument type="service" id="security.user_password_encoder.generic"/>
     </service>
+    <service id="App\Form\PostFormType" class="App\Form\PostFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -851,6 +854,7 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\PostFormType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -1209,7 +1213,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.yj07qm_"/>
+      <argument type="service" id=".service_locator.2W56IZT"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5239,6 +5243,8 @@
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PostFormType" class="App\Form\PostFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\PostFormType" class="App\Form\PostFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" abstract="true"/>
@@ -5502,6 +5508,13 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
+    <service id=".service_locator.hkIQG6q" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="authenticator" type="service" id="App\Security\LoginAuthenticator"/>
+        <argument key="guardHandler" type="service" id="security.authentication.guard_handler"/>
+      </argument>
+    </service>
     <service id=".service_locator.kRcLJGk" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5510,10 +5523,11 @@
         <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
-    <service id=".service_locator.WuHwXtn" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.QhFhinC" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AuthController::login" type="service" id=".service_locator.UDgw6Ol"/>
+        <argument key="App\Controller\DefaultController::dashboard" type="service" id=".service_locator.hkIQG6q"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.kRcLJGk"/>
         <argument key="App\Kernel::loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
@@ -5522,6 +5536,7 @@
         <argument key="kernel::registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service" id=".service_locator.KfwZsne"/>
         <argument key="App\Controller\AuthController:login" type="service" id=".service_locator.UDgw6Ol"/>
+        <argument key="App\Controller\DefaultController:dashboard" type="service" id=".service_locator.hkIQG6q"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.kRcLJGk"/>
         <argument key="kernel:loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
@@ -5587,9 +5602,10 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.yj07qm_" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.2W56IZT" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\PostFormType" type="service" id="App\Form\PostFormType"/>
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
@@ -5997,12 +6013,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.WuHwXtn"/>
+      <argument type="service" id=".service_locator.QhFhinC"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.WuHwXtn"/>
+      <argument type="service" id=".service_locator.QhFhinC"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6411,7 +6427,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.WuHwXtn"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.QhFhinC"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
