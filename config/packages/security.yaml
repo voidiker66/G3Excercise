@@ -40,4 +40,4 @@ security:
             # Use native password encoder
             # This value auto-selects the best possible hashing algorithm
             # (i.e. Sodium when available).
-            algorithm: auto
+            algorithm: sha1
