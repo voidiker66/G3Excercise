@@ -75,9 +75,9 @@ class __TwigTemplate_3f38857ccaea2c1f76b2b6392db65bafea93a7182a3fa6983e293f79027
       <a href=\"/\" class=\"no-underline block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4\">
         Home
       </a>
-      <!-- <a href=\"/login\" class=\"no-underline block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4\">
-        Log In
-      </a> -->
+      <a href=\"/register\" class=\"no-underline block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4\">
+        Sign Up
+      </a>
     </div>
   </div>
 </nav>
@@ -118,9 +118,9 @@ class __TwigTemplate_3f38857ccaea2c1f76b2b6392db65bafea93a7182a3fa6983e293f79027
       <a href=\"/\" class=\"no-underline block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4\">
         Home
       </a>
-      <!-- <a href=\"/login\" class=\"no-underline block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4\">
-        Log In
-      </a> -->
+      <a href=\"/register\" class=\"no-underline block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4\">
+        Sign Up
+      </a>
     </div>
   </div>
 </nav>
