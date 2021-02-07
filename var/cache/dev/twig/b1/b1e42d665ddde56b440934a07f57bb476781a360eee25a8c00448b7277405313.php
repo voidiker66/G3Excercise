@@ -75,10 +75,23 @@ class __TwigTemplate_3f38857ccaea2c1f76b2b6392db65bafea93a7182a3fa6983e293f79027
       <a href=\"/\" class=\"no-underline block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4\">
         Home
       </a>
-      <a href=\"/register\" class=\"no-underline block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4\">
-        Sign Up
-      </a>
-    </div>
+      ";
+        // line 17
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "user", [], "any", false, false, false, 17)) {
+            // line 18
+            echo "        <a href=\"/dashboard\" class=\"no-underline block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4\">
+          Dashboard
+        </a>
+      ";
+        } else {
+            // line 22
+            echo "        <a href=\"/register\" class=\"no-underline block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4\">
+          Sign Up
+        </a>
+      ";
+        }
+        // line 26
+        echo "    </div>
   </div>
 </nav>
 ";
@@ -97,7 +110,7 @@ class __TwigTemplate_3f38857ccaea2c1f76b2b6392db65bafea93a7182a3fa6983e293f79027
 
     public function getDebugInfo()
     {
-        return array (  63 => 2,  44 => 1,);
+        return array (  94 => 26,  88 => 22,  82 => 18,  80 => 17,  63 => 2,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -118,9 +131,15 @@ class __TwigTemplate_3f38857ccaea2c1f76b2b6392db65bafea93a7182a3fa6983e293f79027
       <a href=\"/\" class=\"no-underline block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4\">
         Home
       </a>
-      <a href=\"/register\" class=\"no-underline block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4\">
-        Sign Up
-      </a>
+      {% if app.user %}
+        <a href=\"/dashboard\" class=\"no-underline block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4\">
+          Dashboard
+        </a>
+      {% else %}
+        <a href=\"/register\" class=\"no-underline block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4\">
+          Sign Up
+        </a>
+      {% endif %}
     </div>
   </div>
 </nav>

@@ -31,6 +31,7 @@ class DefaultController extends AbstractController
 
             // $date = date('H:i:s d/m/Y');
             $post->setDate(Carbon::now());
+            $post->setUserId($this->getUser());
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($post);
@@ -47,6 +48,7 @@ class DefaultController extends AbstractController
         // Get 10 most recent posts
         $repository = $this->getDoctrine()->getRepository(Post::class);
         $posts = $repository->createQueryBuilder('p')
+        	->leftJoin('p.user_id', 'u')
         	->orderBy('p.date', 'DESC')
         	->setMaxResults(10)
         	->getQuery()

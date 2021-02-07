@@ -21,6 +21,11 @@ class User implements UserInterface, \Serializable
      */
     private $id;
 
+    public function getId()
+    {
+        return $this->id;
+    }
+
     /**
      * @ORM\Column(type="string", length=25, unique=true)
      */

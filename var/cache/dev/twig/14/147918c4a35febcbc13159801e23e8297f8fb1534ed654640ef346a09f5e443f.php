@@ -147,7 +147,10 @@ class __TwigTemplate_ca3d05676d3154b79144914ca2064e808e17f9d4517c964254d9d3ee423
                 // line 41
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "date", [], "any", false, false, false, 41), "d/m/Y"), "html", null, true);
                 echo "</div>
-\t\t\t    <div class=\"table-cell text-gray-700 px-4 py-2 text-sm\"></div>
+\t\t\t    <div class=\"table-cell text-gray-700 px-4 py-2 text-sm\">";
+                // line 42
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "user", [], "any", false, false, false, 42), "username", [], "any", false, false, false, 42), "html", null, true);
+                echo "</div>
 \t\t\t    <div class=\"table-cell text-gray-700 px-4 py-2 text-sm\">";
                 // line 43
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 43), "html", null, true);
@@ -190,7 +193,7 @@ class __TwigTemplate_ca3d05676d3154b79144914ca2064e808e17f9d4517c964254d9d3ee423
 
     public function getDebugInfo()
     {
-        return array (  171 => 50,  166 => 47,  157 => 44,  153 => 43,  148 => 41,  145 => 40,  141 => 39,  126 => 27,  120 => 24,  116 => 23,  112 => 22,  107 => 19,  105 => 18,  99 => 14,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  174 => 50,  169 => 47,  160 => 44,  156 => 43,  152 => 42,  148 => 41,  145 => 40,  141 => 39,  126 => 27,  120 => 24,  116 => 23,  112 => 22,  107 => 19,  105 => 18,  99 => 14,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -236,7 +239,7 @@ Homepage
 \t    \t{% for post in posts %}
 \t  \t\t<div class=\"table-row-group bg-gray-300 hover:bg-gray-200\">
 \t\t  \t\t<div class=\"table-cell text-gray-700 px-4 py-2 text-sm\">{{ post.date|date(\"d/m/Y\") }}</div>
-\t\t\t    <div class=\"table-cell text-gray-700 px-4 py-2 text-sm\"></div>
+\t\t\t    <div class=\"table-cell text-gray-700 px-4 py-2 text-sm\">{{ post.user.username }}</div>
 \t\t\t    <div class=\"table-cell text-gray-700 px-4 py-2 text-sm\">{{ post.title }}</div>
 \t\t\t    <div class=\"table-cell text-gray-700 px-4 py-2 text-sm\">{{ post.text }}</div>
 \t\t  \t</div>

@@ -33,9 +33,19 @@ class Post
     private $text;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var integer $user_id
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user_id;
+
+    /**
+     * @return User
+     */
+    public function getuser()
+    {
+        return $this->user_id;
+    }
 
     public function getId(): ?int
     {
@@ -83,7 +93,7 @@ class Post
         return $this->user_id;
     }
 
-    public function setUserId(int $user_id): self
+    public function setUserId($user_id): self
     {
         $this->user_id = $user_id;
 
