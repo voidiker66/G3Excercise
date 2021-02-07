@@ -38,7 +38,7 @@ Homepage
 	    	</div>
 	    	{% for post in posts %}
 	  		<div class="table-row-group bg-gray-300 hover:bg-gray-200">
-		  		<div class="table-cell text-gray-700 px-4 py-2 text-sm">{{ post.date|date("d/m/Y") }}</div>
+		  		<div class="table-cell text-gray-700 px-4 py-2 text-sm">{{ post.createdat|date("d/m/Y H:i:s") }}</div>
 			    <div class="table-cell text-gray-700 px-4 py-2 text-sm">{{ post.user.username }}</div>
 			    <div class="table-cell text-gray-700 px-4 py-2 text-sm">{{ post.title }}</div>
 			    <div class="table-cell text-gray-700 px-4 py-2 text-sm">{{ post.text }}</div>

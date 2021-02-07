@@ -24,13 +24,14 @@ class DefaultController extends AbstractController
         $form = $this->createForm(PostFormType::class, $post);
         $form->handleRequest($request);
 
+        // Handle POST requests
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
             $post->setTitle($form->get('title')->getData());
             $post->setText($form->get('text')->getData());
 
             // $date = date('H:i:s d/m/Y');
-            $post->setDate(Carbon::now());
+            $post->setCreatedAt(Carbon::now());
             $post->setUserId($this->getUser());
 
             $entityManager = $this->getDoctrine()->getManager();
@@ -45,11 +46,13 @@ class DefaultController extends AbstractController
             );
         }
 
+        // Handle GET requests
+
         // Get 10 most recent posts
         $repository = $this->getDoctrine()->getRepository(Post::class);
         $posts = $repository->createQueryBuilder('p')
         	->leftJoin('p.user_id', 'u')
-        	->orderBy('p.date', 'DESC')
+        	->orderBy('p.created_at', 'DESC')
         	->setMaxResults(10)
         	->getQuery()
         	->getResult();

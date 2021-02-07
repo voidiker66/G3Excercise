@@ -18,9 +18,9 @@ class Post
     private $id;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
-    private $date;
+    private $created_at;
 
     /**
      * @ORM\Column(type="string", length=32)
@@ -52,14 +52,14 @@ class Post
         return $this->id;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getCreatedAt(): ?\DateTimeInterface
     {
-        return $this->date;
+        return $this->created_at;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setCreatedAt(\DateTimeInterface $date): self
     {
-        $this->date = $date;
+        $this->created_at = $date;
 
         return $this;
     }
